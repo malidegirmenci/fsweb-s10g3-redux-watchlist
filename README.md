@@ -31,26 +31,26 @@ Proje `movies.js` dosyasında yer alan filmleri sırayla görüntüleyebildiniz 
 
 * [X] Projede kullanılan verilerin hangileri redux store'u içerisinde tutulmalı? Bu verilerden `initialState` olarak kullanılması gereken var mı? Planlayın.
 
-* [ ] Proje içerisinde store içerisindeki veriyi hangi fonksiyonlarla değiştirmeniz gerekecek? Düşünün ve reducerınızı oluşturmaya başlayın.
+* [X] Proje içerisinde store içerisindeki veriyi hangi fonksiyonlarla değiştirmeniz gerekecek? Düşünün ve reducerınızı oluşturmaya başlayın.
 
-* [ ] **`store`** oluşturmanın vakti geldi. Tüm uygulamanızı kapsayacak şekilde bir store oluşturun.
+* [X] **`store`** oluşturmanın vakti geldi. Tüm uygulamanızı kapsayacak şekilde bir store oluşturun.
 
-* [ ] Store içerisinde duran veriler projede nerede kullanılacak? **`useSelector`** hooku ile store içerisinden gerekli verileri alın ve ilgili yerlerde kullanın.
+* [X] Store içerisinde duran veriler projede nerede kullanılacak? **`useSelector`** hooku ile store içerisinden gerekli verileri alın ve ilgili yerlerde kullanın.
 
-* [ ] Artık `action`larla çalışmaya hazırız. Hangi actionlar olmalı, hangi kısımlarda tetiklenmeli? İlgili yerlerde bu actionları **`dispatch`** edin.
+* [X] Artık `action`larla çalışmaya hazırız. Hangi actionlar olmalı, hangi kısımlarda tetiklenmeli? İlgili yerlerde bu actionları **`dispatch`** edin.
 
 ### Görev 3: Projeye redux-logger eklemek
 
-- [ ] Projenize [redux-logger](https://github.com/LogRocket/redux-logger) paketini ekleyin.
+- [X] Projenize [redux-logger](https://github.com/LogRocket/redux-logger) paketini ekleyin.
 
-- [ ] Dokümantasyonunda tarif edildiği gibi projenize eklemeye çalışın. Sorun yaşarsanız hap bilgiler içerisindeki örneği takip edin.
+- [X] Dokümantasyonunda tarif edildiği gibi projenize eklemeye çalışın. Sorun yaşarsanız hap bilgiler içerisindeki örneği takip edin.
 
-- [ ] Store ile ilgili değişiklikler yaptığınızda logger paketinin vermiş olduğu logları inceleyin.
+- [X] Store ile ilgili değişiklikler yaptığınızda logger paketinin vermiş olduğu logları inceleyin.
 
 ### Esnek Görevler
 
-- [ ] Filmler arasında gezinmeyi kolaylaştırmak için bir "Önceki", bir de "Başa dön" butonu ekleyin. Bunları görüntülemeniz gereken yerleri bulun ve ekleyin.
+- [X] Filmler arasında gezinmeyi kolaylaştırmak için bir "Önceki", bir de "Başa dön" butonu ekleyin. Bunları görüntülemeniz gereken yerleri bulun ve ekleyin.
 
-- [ ] Proje stillerini kendi istediğiniz şekilde değiştirmeye çalışın.
+- [X] Proje stillerini kendi istediğiniz şekilde değiştirmeye çalışın.
 
-- [ ] Film listesi 20 adet film içeriyor. Filmler arasında gezinirken son filme geldiğinizde "Sıradaki" butonunun, ilk filme geldiğinizde "Önceki" butonunun görüntülenmemesini sağlayın.
+- [X] Film listesi 20 adet film içeriyor. Filmler arasında gezinirken son filme geldiğinizde "Sıradaki" butonunun, ilk filme geldiğinizde "Önceki" butonunun görüntülenmemesini sağlayın.
