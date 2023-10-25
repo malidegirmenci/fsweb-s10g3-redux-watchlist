@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
             }
             return{
                 ...state,
-                watchlist: foundedMovie !== undefined ?[...state.watchlist] : [...state.watchlist, action.payload],
+                watchlist: foundedMovie !== undefined ? [...state.watchlist] : [...state.watchlist, action.payload],
             }
         case REMOVE_WATCHLIST:
             return{
