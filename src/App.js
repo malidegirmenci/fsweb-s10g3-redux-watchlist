@@ -1,14 +1,31 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import Movie from "./components/Movie";
 import FavMovie from "./components/FavMovie";
+import { useDispatch, useSelector } from "react-redux";
+import { addWatchlist } from "./store/actions/watchlistActions";
+import { nextQueue, prevQueue, firstQueue } from "./store/actions/movieActions";
 
 function App() {
-  const [sira, setSira] = useState(0);
-  const favMovies = [];
+  //const [sira, setSira] = useState(0);
+  const dispatch = useDispatch();
+  const queue = useSelector(store => store.movieReducer.queue);
+  const favMovies = useSelector(store => store.watchlistReducer.watchlist);
+  const movies = useSelector(store => store.movieReducer.movies);
+  console.log("movies:", movies);
+  console.log("queue", queue);
+  console.log("watchList", favMovies);
 
+  //console.log("FavMovies:", favMovies)
   function sonrakiFilm() {
-    setSira(sira + 1);
+    //setSira(sira + 1);
+    dispatch(nextQueue())
+  }
+  function öncekiFilm() {
+    dispatch(prevQueue());
+  }
+  function basaDon() {
+    dispatch(firstQueue())
   }
 
   return (
@@ -23,21 +40,40 @@ function App() {
       </nav>
       <Switch>
         <Route exact path="/">
-          <Movie sira={sira} />
-
+          <Movie />
           <div className="flex gap-3 justify-end py-3">
-            <button
-              onClick={sonrakiFilm}
-              className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
-            >
-              Sıradaki
-            </button>
-            <button className="select-none px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white">
+            {
+              queue === 0 ? null :
+                <button
+                  onClick={() => öncekiFilm()}
+                  className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
+                >
+                  Önceki
+                </button>
+            }
+            {
+              queue === 19 ? null :
+                <button
+                  onClick={() => sonrakiFilm()}
+                  className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
+                >
+                  Sıradaki
+                </button>
+            }
+            {
+              queue !== 19 ? null :
+                <button
+                  onClick={() => basaDon()}
+                  className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
+                >
+                  Başa Dön
+                </button>
+            }
+            <button onClick={() => { dispatch(addWatchlist(movies[queue])) }} className="select-none px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white" >
               Listeme ekle
             </button>
           </div>
         </Route>
-
         <Route path="/listem">
           <div>
             {favMovies.map((movie) => (
